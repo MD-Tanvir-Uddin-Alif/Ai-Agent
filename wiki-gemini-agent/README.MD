@@ -6,7 +6,7 @@ A smart AI agent that uses **Google Gemini (via LangChain)** and **Wikipedia** t
 
 - 🔎 Natural language question answering
 - 🌐 Wikipedia integration via LangChain tools
-- ⚡ Uses Gemini 2.0 Flash API for fast, intelligent responses
+- ⚡ Uses Gemini 1.5 Flash API for fast, intelligent responses
 - 🔐 API keys securely managed via `.env` file
 
 ---
