@@ -16,5 +16,5 @@ A smart AI agent that uses **Google Gemini (via LangChain)** and **Wikipedia** t
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/wiki-gemini-agent.git
+git clone https://github.com/MD-Tanvir-Uddin-Alif/Ai-Agent/tree/main/wiki-gemini-agent
 cd wiki-gemini-agent
