@@ -33,4 +33,4 @@ def scrape_ebay_deals(keyword: str, max_results=5):
                 "rating": "N/A",
                 "link": link_el["href"]
             })
-    return deals
+    return deals 
