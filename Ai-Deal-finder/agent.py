@@ -1,10 +1,13 @@
-from langchain.agents import create_tool_calling_agent, AgentExecutor
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import ChatMessagePromptTemplate
-from dotenv import load_dotenv
-from tools import amazon_tool, daraz_tool, ebay_tool, aggregate_tool
 import os
+from dotenv import load_dotenv
 
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain.agents import create_tool_calling_agent, AgentExecutor
+from langchain_core.prompts import ChatPromptTemplate
+
+from tools import amazon_tool, daraz_tool, ebay_tool, aggregate_tool
+
+load_dotenv()
 
 llm = ChatGoogleGenerativeAI(
     model="models/gemini-1.5-flash",
@@ -14,13 +17,13 @@ llm = ChatGoogleGenerativeAI(
 
 tools = [amazon_tool, daraz_tool, ebay_tool, aggregate_tool]
 
-prompt = ChatMessagePromptTemplate.format_messages9([
-    ("system", 
+prompt = ChatPromptTemplate.from_messages([
+    ("system",
      "You are a smart online deal finder. Your job is to find the best deals from Amazon, Daraz, and eBay using available tools. "
      "Use the 'Aggregate Deal Finder' tool to get top 10 best-priced results. Respond with helpful and clear information."),
-    ("user", "{input}")
+    ("user", "{input}"),
+    ("ai", "{agent_scratchpad}")
 ])
-
 
 agent = create_tool_calling_agent(llm=llm, tools=tools, prompt=prompt)
 
