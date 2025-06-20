@@ -19,19 +19,19 @@ def aggregate_and_rank(keyword):
 
 
 amazon_tool = Tool(
-    name="Amazon Scraper",
+    name="amazon_scraper",
     description="Scrapes Amazon for product deals based on search keywords.",
     func=scrape_amazon_deals,
 )
 
 daraz_tool = Tool(
-    name="Daraz Scraper",
+    name="daraz_scraper",
     description="Scrapes Daraz for product deals based on search keywords.",
     func=scrape_daraz_deals,
 )
 
 ebay_tool = Tool(
-    name="eBay Scraper",
+    name="ebay_scraper",
     description="Scrapes eBay for product deals based on search keywords.",
     func=scrape_ebay_deals,
 )
@@ -39,7 +39,7 @@ ebay_tool = Tool(
 
 # aggration tools
 aggregate_tool = Tool(
-    name="Aggregate Deal Finder",
+    name="aggregate_deal_finder",
     description="Aggregates product deals from Amazon, Daraz, and eBay, then ranks them by price.",
     func=aggregate_and_rank,
 )
