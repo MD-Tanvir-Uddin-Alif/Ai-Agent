@@ -1,0 +1,6 @@
+langchain==0.0.208
+langchain-google-genai==0.0.6
+beautifulsoup4==4.12.2
+requests==2.31.0
+python-dotenv==1.0.0
+google-auth==2.21.0

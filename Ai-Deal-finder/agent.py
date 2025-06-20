@@ -17,13 +17,23 @@ llm = ChatGoogleGenerativeAI(
 
 tools = [amazon_tool, daraz_tool, ebay_tool, aggregate_tool]
 
+from langchain_core.prompts import ChatPromptTemplate
+
 prompt = ChatPromptTemplate.from_messages([
     ("system",
-     "You are a smart online deal finder. Your job is to find the best deals from Amazon, Daraz, and eBay using available tools. "
-     "Use the 'Aggregate Deal Finder' tool to get top 10 best-priced results. Respond with helpful and clear information."),
+     "You are a helpful online deal finder assistant. "
+     "When the user gives a search query, do the following:\n"
+     "1. Use all keywords given to search Amazon, Daraz, and eBay for deals. "
+     "2. If the user specifies a price range or location, use it to filter results. "
+     "3. If no price or location is given, just search with the keywords as is. "
+     "4. Only ask for clarification if the input is empty or too vague to perform a search. "
+     "5. Return a clear list of deals with title, price, rating, and link.\n"
+     "Keep the response friendly and concise."
+    ),
     ("user", "{input}"),
     ("ai", "{agent_scratchpad}")
 ])
+
 
 agent = create_tool_calling_agent(llm=llm, tools=tools, prompt=prompt)
 
