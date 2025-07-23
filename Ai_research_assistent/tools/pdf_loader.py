@@ -1,4 +1,6 @@
-from langchain.document_loaders import PyMuPDFLoader
+# from langchain.document_loaders import PyMuPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
+
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 def load_and_chunk_pdf(file_path, chunk_size=800, chunk_overlap=150):

@@ -19,7 +19,7 @@ class SummarizerAgent:
         
         combine_text = "\n\n".join([chunk.page_content for chunk in chunks])
         
-        prompt = f"{self.prompt_template}\n\n---\n\n{combined_text}"
+        prompt = f"{self.prompt_template}\n\n---\n\n{combine_text}"
 
         response = self.model.generate_content(prompt)
 

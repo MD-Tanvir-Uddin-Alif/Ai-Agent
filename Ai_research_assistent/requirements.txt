@@ -1,0 +1,22 @@
+# Core LangChain and ecosystem
+langchain>=0.2.0
+langchain-community>=0.2.0
+langchain-core>=0.2.0
+langchainhub
+
+# Gemini (via Vertex AI or GenerativeAI)
+google-generativeai
+
+# Tools for PDF handling
+PyMuPDF  # for loading PDFs (used by PyMuPDFLoader)
+
+# Tokenization and text processing
+tiktoken
+unstructured  # For general document parsing
+
+# Environment variables and CLI
+python-dotenv
+argparse
+
+# Optional utilities
+requests
