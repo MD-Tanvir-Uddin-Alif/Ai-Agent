@@ -56,3 +56,29 @@ The system is composed of multiple specialized agents that interact with the PDF
 ```bash
 git clone https://github.com/MD-Tanvir-Uddin-Alif/Ai-Agent/tree/main/Ai_research_assistent.git
 cd Ai_research_assistent
+
+
+### 3. Set Up Environment Variables
+
+Create a `.env` file in the root directory and add your [Gemini 1.5 Flash API key](https://aistudio.google.com/app/apikey) like this:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+
+
+## 📁 Project Structure
+
+ai-research-assistant/
+│
+├── agents/
+│   ├── reader_agent.py
+│   ├── summarizer_agent.py
+│   └── explainer_agent.py
+│
+├── prompts/
+│   └── summarization_prompt.txt
+│
+├── main.py
+├── requirements.txt
+└── .env
+
