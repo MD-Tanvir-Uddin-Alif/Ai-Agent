@@ -47,6 +47,7 @@ The system is composed of multiple specialized agents that interact with the PDF
 ---
 
 ## ⚙️ Installation & Setup
+```bash
  pip install -r requirements.txt
 
 
